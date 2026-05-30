@@ -1,0 +1,28 @@
+@hostname = localhost
+@port = 3000
+@protocol = http
+@host = {{protocol}}://{{hostname}}:{{port}}
+@contentType = application/json
+
+
+@module = users
+
+###
+
+POST {{host}}/{{module}}/ HTTP/1.1
+Content-Type: {{contentType}}
+
+{
+  "name": "Henrique",
+  "email": "henrique@email.com"
+}
+
+###
+
+GET {{host}}/{{module}}/ HTTP/1.1
+
+### 
+
+@id = 79767812-c44a-4ca7-ae8c-919bc4881a24
+
+GET {{host}}/{{module}}/{{id}} HTTP/1.1
