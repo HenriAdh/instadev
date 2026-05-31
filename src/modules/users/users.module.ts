@@ -5,6 +5,7 @@ import { GetUserByIdService } from './services/getUserById.service';
 import { CreateUserService } from './services/createUser.service';
 import { IUserRepository } from './repositories/IUserRepository';
 import { UserRepository } from './repositories/implementations/UserRepository';
+import { GetUserByLoginService } from './services/getUserByLogin.service';
 
 @Module({
   imports: [],
@@ -13,10 +14,9 @@ import { UserRepository } from './repositories/implementations/UserRepository';
     ListUsersService,
     GetUserByIdService,
     CreateUserService,
-    {
-      provide: IUserRepository,
-      useClass: UserRepository,
-    },
+    GetUserByLoginService,
+    { provide: IUserRepository, useClass: UserRepository },
   ],
+  exports: [GetUserByLoginService],
 })
 export class UsersModule {}

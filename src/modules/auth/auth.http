@@ -1,0 +1,23 @@
+@hostname = localhost
+@port = 3000
+@protocol = http
+@host = {{protocol}}://{{hostname}}:{{port}}
+@contentType = application/json
+@auth = Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI3YTljMGM4Ny0yNzMxLTQ3YjctODkyYi04ZTk5ZTRhODgyNDQiLCJ1c2VybmFtZSI6IkpvYW8gZGEgU2lsdmEgU2F1cm8iLCJpYXQiOjE3ODAxODgxNTUsImV4cCI6MTc4MDE4ODIxNX0.QS7A_PpfHLEKMrNwqhrFlw94BNfkK3kPL04LrobNejU
+
+@module = auth 
+
+###
+
+POST {{host}}/{{module}}/login HTTP/1.1
+Content-Type: {{contentType}}
+
+{
+  "login": "joao.sauro",
+  "password": "270XNimE,2&#"
+}
+
+###
+
+GET {{host}}/{{module}}/profile HTTP/1.1
+Authorization: {{auth}}

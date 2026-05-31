@@ -6,6 +6,7 @@ export const CreateUserSchema = z.object({
     .string()
     .min(3, { error: 'Nome deve conter pelo menos 3 caracteres' }),
   email: z.email({ error: 'Formato de e-mail inválido' }),
+  login: z.string().min(3, 'Login deve conter pelo menos 3 caracteres'),
 });
 
 export class CreateUserDto extends createZodDto(CreateUserSchema) {}

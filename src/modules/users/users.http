@@ -13,8 +13,9 @@ POST {{host}}/{{module}}/ HTTP/1.1
 Content-Type: {{contentType}}
 
 {
-  "name": "Henrique",
-  "email": "henrique@email.com"
+  "name": "Henrique Adhmann Pires",
+  "email": "henrique@email.com",
+  "login": "henrique.pires"
 }
 
 ###
